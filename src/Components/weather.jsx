@@ -174,7 +174,7 @@ const Weather = () => {
 
             {forecastData && (
               <div className="bg-blue-950 p-6 rounded-lg shadow-lg lg:w-1/2">
-                <h3 className="text-2xl text-whiteC font-bold mb-4">5-Day Forecast</h3>
+                <h3 className="text-2xl text-white font-bold mb-4">5-Day Forecast</h3>
                 <div className="flex flex-col space-y-4">
                   {getDailyForecasts(forecastData).map((forecast, index) => (
                     <div key={index} className="flex justify-between items-center bg-blue-300 p-3 rounded-md">
