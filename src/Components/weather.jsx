@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+
 const Weather = () => {
   const [city, setCity] = useState('');
   const [weatherData, setWeatherData] = useState(null);
@@ -10,7 +11,7 @@ const Weather = () => {
   const [error, setError] = useState(''); // Error state
 
   const units = 'metric';
-  const apiKey = '31138420f3763e8c63efa6c7364de189'; // Replace with your OpenWeatherMap API key
+  const apiKey = process.env.REACT_APP_WEATHER_API_KEY; 
 
   const fetchWeatherData = async (currentCity) => {
     if (currentCity === '') return;
