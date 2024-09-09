@@ -7,8 +7,8 @@ const Weather = () => {
   const [weatherData, setWeatherData] = useState(null);
   const [forecastData, setForecastData] = useState(null);
   const [isCelsius, setIsCelsius] = useState(true);
-  const [loading, setLoading] = useState(false); // Loading state
-  const [error, setError] = useState(''); // Error state
+  const [loading, setLoading] = useState(false); 
+  const [error, setError] = useState(''); 
 
   const units = 'metric';
   const apiKey = process.env.REACT_APP_WEATHER_API_KEY; 
@@ -16,9 +16,9 @@ const Weather = () => {
   const fetchWeatherData = async (currentCity) => {
     if (currentCity === '') return;
 
-    setLoading(true);  // Start loading
-    setError('');  // Clear any previous errors
-    setWeatherData(null); // Clear previous data
+    setLoading(true); 
+    setError('');  
+    setWeatherData(null);
 
     try {
       const res = await axios.get(
@@ -36,7 +36,7 @@ const Weather = () => {
     } catch (error) {
       setError('Enter a valid city name');
     } finally {
-      setLoading(false); // End loading
+      setLoading(false);
     }
   };
 
@@ -46,9 +46,9 @@ const Weather = () => {
 
   const handleGeoLocation = () => {
     if (navigator.geolocation) {
-      setLoading(true); // Start loading
-      setError(''); // Clear any previous errors
-      setWeatherData(null); // Clear previous data
+      setLoading(true);
+      setError(''); 
+      setWeatherData(null);
 
       navigator.geolocation.getCurrentPosition(async (position) => {
         const { latitude, longitude } = position.coords;
@@ -67,7 +67,7 @@ const Weather = () => {
         } catch (error) {
           setError('Enter a valid city name');
         } finally {
-          setLoading(false); // End loading
+          setLoading(false); 
         }
       });
     } else {
